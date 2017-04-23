@@ -2,12 +2,12 @@
 $PluginInfo['PushbulletNotification'] = [
     'Name' => 'Pushbullet Notification',
     'Description' => 'Allows users to be notified by <a href="https://www.pushbullet.com/">Pushbullet</a>.',
-    'Version' => '0.1',
+    'Version' => '0.1.1',
     'RequiredApplications' => ['Vanilla' => '>= 2.2'],
     'RequiredPlugins' => false,
     'RequiredTheme' => false,
     'SettingsPermission' => 'Garden.Settings.Manage',
-    'SettingsUrl' => '/settings/pushbullet',
+    'SettingsUrl' => '/settings/pushbulletnotification',
     'RegisterPermissions' => ['Plugins.PushbulletNotification.Allow'],
     'MobileFriendly' => true,
     'HasLocale' => true, // Well, not yet...
@@ -46,7 +46,7 @@ class PushbulletNotificationPlugin extends Gdn_Plugin {
      *
      * @return void.
      */
-    public function settingsController_pushbulletnotification_create($sender) {
+    public function settingsController_pushbulletNotification_create($sender) {
         $sender->permission('Garden.Settings.Manage');
         $sender->title(t('Pushbullet Notification Settings'));
         $sender->addSideMenu('dashboard/settings/plugins');
